@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8"/>
+        <title> Waterlevel </title>
+        <script language="javascript" type="text/javascript" src="client.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    </head>
+
+    <body>
+        <h1>Waterlevel</h1>
+        <p> Hier werden die Daten der letzten 6 Stunden dargestellt. Sie werden jede 1 Minute aktuallisiert.</p>
+        <canvas id="myChart"></canvas>
+        <p id="updated" style="text-align:right"></p>
+        <script>
+          
+        var xValues = ${{xValues}};
+        var yValues = ${{yValues}};
+        
+        var myChart = new Chart("myChart", {
+          type: "line",
+          data: {
+            labels: xValues,
+            datasets: [{
+              fill: false,
+              lineTension: 0,
+              backgroundColor: "rgba(0,65,220,1.0)",
+              borderColor: "rgba(0,65,200,0.5)",
+              data: yValues
+            }]
+          },
+          options: {
+            legend: {display: false},
+            scales: {
+              yAxes: [{ticks: {min: 0, max:16}}]
+            }
+          }
+        });
+
+        const evtSource = new EventSource("/subscribe");
+        evtSource.onmessage = function(event) {
+          console.log(event.data);
+          myChart.data.labels.push(...JSON.parse(event.data).xValue);
+          myChart.data.datasets.forEach((dataset) => {
+              dataset.data.push(...JSON.parse(event.data).yValue);
+          });
+          myChart.update();
+        }
+      
+        setInterval(()=>{
+          document.getElementById("updated").innerHTML="Akruallisiert um: "+ xValues[xValues.length-1];
+        },1000*10)
+        
+        </script>
+    </body>
+</html>
