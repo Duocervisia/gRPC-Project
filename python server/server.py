@@ -10,8 +10,7 @@ class WaterLevelServicer(waterlevel_pb2_grpc.WaterLevelServicer):
 
     def GetData(self, request_iterator, context):
 
-
-        print(str(request_iterator))
+        print("Client connected with IP: ",context.peer())
 
         plotter = Plotter()
         jsonString = plotter.getJson(request_iterator.beginning_timestamp)
@@ -35,5 +34,5 @@ def serve():
 
 
 if __name__ == '__main__':
-    print("running")
+    print("running\n")
     serve()

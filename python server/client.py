@@ -7,7 +7,7 @@ import waterlevel_pb2
 
 def make_message():
     return waterlevel_pb2.GetDataRequest(
-        beginning_timestamp=1654593176
+        beginning_timestamp=1655120774
     )
 
 

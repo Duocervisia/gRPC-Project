@@ -37,7 +37,7 @@ class Plotter():
 
         resultString = str(sinValue)
 
-        print(resultString)
+        #print(resultString)
 
         return resultString
 
@@ -60,7 +60,8 @@ class Plotter():
             })
 
             timestamp += 1
-
+            
+        print("Amount of measurements send: ", len(dataSet), "\n")
         return json.dumps(dataSet)
 
 
