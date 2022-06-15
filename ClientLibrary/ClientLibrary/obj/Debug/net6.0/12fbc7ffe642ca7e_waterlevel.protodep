@@ -1,0 +1,2 @@
+obj\Debug\net6.0\Protos/Waterlevel.cs \
+obj\Debug\net6.0\Protos/WaterlevelGrpc.cs: Protos/waterlevel.proto

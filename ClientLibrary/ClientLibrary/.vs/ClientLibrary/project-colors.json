@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "da1cc446-d876-4a4a-8462-625a5565885b": {
+      "ProjectGuid": "da1cc446-d876-4a4a-8462-625a5565885b",
+      "DisplayName": "ClientLibrary",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

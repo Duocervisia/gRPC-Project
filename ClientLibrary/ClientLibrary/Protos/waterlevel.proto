@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option csharp_namespace = "ClientLibrary";
+
+package waterlevel;
+
+service WaterLevel {
+  // Get Data beginning from timetsamp till now
+  rpc GetData (GetDataRequest) returns (GetDataReply);
+}
+
+// The request message containing the beginning timestamp from which the values are wanted
+message GetDataRequest {
+  int32 beginning_timestamp = 1;
+}
+
+// The response message containing the json reply
+message GetDataReply {
+  string json = 1;
+}
