@@ -11,12 +11,13 @@ This Project contains a Phyton gRPC Server, a NodeJS Client and a C# Client.
 
 # Setup C# Client
 
-1. Get the ClientLibrary and the c# Client.
-2. Make sure all the packages (Google.Protobuf, Grpc.Net.Client, Grpc.Tools) are really included.
-3. Run ClientLibrary one time.
-4. Check that ClientLibrary is referenced in c# Client (would be visible in Waterlevel.csproj)
-5. Run C# Client
-6. For fun: The method "GetLastDayToUnix()" in the Class "RequestHandler" sets the beginning timestamp. e.g. Uncomment line 72 oder change line 73 to see different time spans.
+1. Install C# https://visualstudio.microsoft.com/de/vs/community/
+2. Get the ClientLibrary and the c# Client.
+3. Make sure all the packages (Google.Protobuf, Grpc.Net.Client, Grpc.Tools) are really included.
+4. Run ClientLibrary one time.
+5. Check that ClientLibrary is referenced in c# Client (would be visible in Waterlevel.csproj)
+6. Run C# Client
+7. For fun: The method "GetLastDayToUnix()" in the Class "RequestHandler" sets the beginning timestamp. e.g. Uncomment line 72 oder change line 73 to see different time spans.
 
 # Setup Node.js Client
 
