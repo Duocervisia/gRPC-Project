@@ -9,7 +9,7 @@
 
     <body>
         <h1>Waterlevel</h1>
-        <p> Hier werden die Daten der letzten 6 Stunden dargestellt. Sie werden jede 1 Minute aktuallisiert.</p>
+        <p> Hier werden die Daten der letzten 6 Stunden dargestellt. Sie werden jede 1 Minute aktualisiert.</p>
         <canvas id="myChart"></canvas>
         <p id="updated" style="text-align:right"></p>
         <script>
@@ -48,7 +48,7 @@
         }
       
         setInterval(()=>{
-          document.getElementById("updated").innerHTML="Akruallisiert um: "+ xValues[xValues.length-1];
+            document.getElementById("updated").innerHTML ="Aktualisiert um: "+ xValues[xValues.length-1];
         },1000*10)
         
         </script>
